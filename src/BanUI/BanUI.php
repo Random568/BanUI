@@ -27,7 +27,7 @@ class Main extends PluginBase implements Listener {
 					$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");				
 					if($api === null || $api->isDisabled()){					
 					}					
-					$form = $api->createSimpleForm(function (Player $sender, array $data){
+					$form = $api->createCustomForm(function (Player $sender, array $data){
 					$result = $data[0];					
 					if($result === null){						
 					}
@@ -38,7 +38,7 @@ class Main extends PluginBase implements Listener {
 						}					
 					});					
 					$form->setTitle("Ban Screen");
-					$form->setContent("Please choose who your banning.");
+					$form->addContent("Please choose who your banning.");
 					$form->addInput(TextFormat::BOLD . "Who you are banning");	
 					$form->sendToPlayer($sender);										
 				}
